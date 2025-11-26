@@ -15,6 +15,7 @@ public class hollowRectangle {
         }
     }
     public static void main(String[] args) {
+        
         /* it's working but below is advanced one */
         // for(int i=1; i<=5; i++) {
         //     if(i==2 || i == 3 || i == 4) {
