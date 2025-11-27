@@ -1,8 +1,14 @@
+import java.util.Scanner;
+
 public class hollowRhombus {
 
     public static void main(String[] args) {
 
-        int n = 5;
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter number");
+        int n = sc.nextInt();
+        sc.close();
 
         for(int i = 1; i<=n; i++) {
             for(int j=n-i; j>=1; j--){
