@@ -18,7 +18,8 @@ public class ArraysBasic {
         System.out.println(Arrays.toString(fruits));
 
         int newNum []= new int[20];
-        
+        int max = Integer.MAX_VALUE;
+        int min = Integer.MIN_VALUE;
         
     }
     
