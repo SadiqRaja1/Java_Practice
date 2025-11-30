@@ -56,25 +56,35 @@ public class ArraysBasic {
 
         */
 
-        //Largest Number
-
-        int numLine [] = {1, 2, 6, 3, 5};
-
         /* 
-        //brute force
-        int largest = 0; //or Integer.MIN_VALUE
-        for(int i=0; i<numLine.length; i++) {
-            largest = (largest < numLine[i]) ? numLine[i] : largest;
-        }
-        System.out.println(largest);
+
+            //Largest Number
+
+            int numLine [] = {1, 2, 6, 3, 5};
+
+             
+            //brute force
+            int largest = 0; //or Integer.MIN_VALUE
+            for(int i=0; i<numLine.length; i++) {
+                largest = (largest < numLine[i]) ? numLine[i] : largest;
+            }
+            System.out.println(largest);
+
+            
+
+            //sort and give the last one
+            Arrays.sort(numLine);
+            System.out.println("largest is "+ numLine[numLine.length-1]);
 
         */
 
-        //sort and give the last one
-        Arrays.sort(numLine);
-        System.out.println("largest is "+ numLine[numLine.length-1]);
+            int numArr [] = {2, 4, 6, 8, 10};
 
-        
+            for(int i = 0; i<numArr.length; i++) {
+                for(int j = 1; j<numArr.length-i; j++) {
+                    System.out.print("(" + numArr[i]+ ", "+ numArr[j]+ ")" + " ");
+                }
+            }
     }
     
 }
