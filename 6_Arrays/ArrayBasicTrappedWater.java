@@ -36,12 +36,33 @@ public class ArrayBasicTrappedWater {
         int leftMost [] = new int[parameterHeight.length];
         int RightMost [] = new int[parameterHeight.length];
         
-        for(int i=0; i<=parameterHeight.length; i++) {
+        
+        for(int i=0; i<parameterHeight.length; i++) {
+            int largest = 0;
             for(int j=i; j>=0; j--) {
-                leftMost[i] = (parameterHeight[j] > parameterHeight[j-1] ? parameterHeight[j] :parameterHeight[j-1]);
+                largest = (largest > parameterHeight[j]) ? largest : parameterHeight[j];
             }
+            leftMost[i] =largest;
         }
+        
+        for(int i=0; i<parameterHeight.length; i++) {
+            int smallest = 0;
+            for(int j=i; j<parameterHeight.length; j++) {
+                smallest = (smallest > parameterHeight[j]) ? smallest : parameterHeight[j];
+            }
+            RightMost[i] =smallest;
+        }
+
         System.out.println(Arrays.toString(leftMost));
+        System.out.println(Arrays.toString(RightMost));
+
+        int waterStored = 0;
+        for(int i=0; i<parameterHeight.length; i++) {
+            int small = (leftMost[i] < RightMost[i]) ? leftMost[i] : RightMost[i];
+            waterStored = waterStored + (small - parameterHeight[i]);
+        }
+
+        System.out.println(waterStored);
         
     }
     public static void main(String[] args) {
