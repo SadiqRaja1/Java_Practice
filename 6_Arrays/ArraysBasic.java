@@ -78,6 +78,7 @@ public class ArraysBasic {
 
         */
 
+            // Pair in Array
             int numArr [] = {2, 4, 6, 8, 10};
 
             for(int i = 0; i<numArr.length; i++) {
