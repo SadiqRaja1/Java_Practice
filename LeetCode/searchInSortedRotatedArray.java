@@ -1,8 +1,5 @@
-import java.util.Arrays;
-
-public class ArraysTwo {
-
-public static int search (int nums [], int target) {
+public class searchInSortedRotatedArray {
+    public static int search (int nums [], int target) {
         if(nums.length == 1) {
             if(nums[0] == target) {
                 return 0;

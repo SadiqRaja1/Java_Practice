@@ -10,30 +10,41 @@ public class roughArray {
         }
         int rotation = findStart(nums);
 
+        if(nums[rotation] == target) {
+            return rotation;
+        }
+
         int start, end, mid;
 
         if(target >= nums[rotation] && target <= nums[nums.length-1]) {
             start = rotation;
             end = nums.length-1;
             mid = (start + end) /2;
+            System.out.println("here1");
         }else {
+            System.out.println("here3");
             start = 0;
-            end = rotation;
+            end = rotation-1;
             mid = (start + end) /2;
+
+            
         }
 
+        
+
         while (start <= end) {
+
             if (nums[mid] == target) {
                 return mid;
             }
 
             if(nums[mid] < target){
-                start = mid;
+                start = mid+1;
                 mid = (start + end) /2;
             }
 
             if(nums[mid] > target) {
-                end = mid;
+                end = mid-1;
                 mid = (start + end) /2;
             }
             
@@ -50,7 +61,7 @@ public class roughArray {
                 return mid + 1;
             }
             if(numsParameter[mid] > numsParameter[end]) {
-                start = mid;
+                start = mid+1;
                 mid = (start + end) /2;
             }
             if(numsParameter[mid] < numsParameter[end]) {
@@ -62,7 +73,7 @@ public class roughArray {
     }
     public static void main(String[] args) {
         int nums [] = {1,3};
-        int target = 2;
+        int target = 3;
 
         System.out.println(findStart(nums));
         System.out.println(search(nums, target));
