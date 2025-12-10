@@ -1,5 +1,7 @@
 public class roughArray {
 
+    // search in rotated sorted and also in linear sorted array
+    /* 
     public static int search (int nums [], int target) {
         if(nums.length == 1) {
             if(nums[0] == target) {
@@ -20,9 +22,7 @@ public class roughArray {
             start = rotation;
             end = nums.length-1;
             mid = (start + end) /2;
-            System.out.println("here1");
         }else {
-            System.out.println("here3");
             start = 0;
             end = rotation-1;
             mid = (start + end) /2;
@@ -78,4 +78,6 @@ public class roughArray {
         System.out.println(findStart(nums));
         System.out.println(search(nums, target));
     }
+
+    */
 }
