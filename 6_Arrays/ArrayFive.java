@@ -1,5 +1,8 @@
 import java.util.Arrays;
 
+
+// not solved now will solve it later
+
 public class ArrayFive {
     public static void printTriplets(int parameterArr1 []) {
         for(int i=0; i<parameterArr1.length; i++) {
