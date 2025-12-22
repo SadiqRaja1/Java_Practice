@@ -21,9 +21,7 @@ public class selection {
     }
     public static void main(String[] args) {
         int nums [] = {3, 4, 5, 2, 1}; 
-        int nums2 [] = {2,6,3};
-        selectionSort(nums2);
-
+        
         selectionSort(nums);
     }
 }
