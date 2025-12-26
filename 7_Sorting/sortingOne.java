@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class sortingOne {
@@ -18,12 +17,17 @@ public class sortingOne {
 
     public static void SelectionSortReverse (int parameterArr []) {
         for(int i = 0; i< parameterArr.length; i++) {
+            int biggest = i;
             for(int j = i+1; j<parameterArr.length; j++) {
-                if(parameterArr[i] < parameterArr[j]) {
-                    int temp = parameterArr[i];
-                    parameterArr[i] = parameterArr[j];
-                    parameterArr[j] = temp;
+                if(parameterArr[j] > parameterArr[biggest]) {
+                    biggest = j;
                 }
+            }
+
+            if(parameterArr[i] != parameterArr[biggest]) {
+                int temp = parameterArr[i];
+                parameterArr[i] = parameterArr[biggest];
+                parameterArr[biggest] = temp;
             }
         }
 
