@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class sortingOne {
@@ -43,11 +44,36 @@ public class sortingOne {
 
         System.out.println(Arrays.toString(parameterArr));
     }
+
+    public static void countingSortReverse(int parameterArr []) {
+        int max = Integer.MIN_VALUE;
+
+        for(int i =0; i<parameterArr.length; i++) {
+            max = max > parameterArr [i]? max :parameterArr[i];
+        }
+
+        int countArr [] = new int[max+1];
+
+        for(int i = 0; i<parameterArr.length; i++) {
+            countArr[parameterArr[i]]++;
+        }
+
+        int count = 0;
+        for(int i=countArr.length-1; i>=0; i--) {
+            while(countArr[i] > 0) {
+                parameterArr[count] = i;
+                count++;
+                countArr[i]--;
+            }
+        }
+        System.out.println(Arrays.toString(parameterArr));
+    }
     public static void main(String[] args) {
         int arr [] = {3, 6, 2, 1, 8, 7, 4, 5, 3, 1};
 
         bubbleSortReverse(arr);
         SelectionSortReverse(arr);
         insertionSortReverse(arr);
+        countingSortReverse(arr);
     }
 }
