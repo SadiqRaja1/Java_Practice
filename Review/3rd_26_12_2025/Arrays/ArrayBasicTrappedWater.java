@@ -21,33 +21,33 @@ public class ArrayBasicTrappedWater {
         return leftMost;
     }
 
-    public static boolean checkAssending(int parameterArr []) {
-        for(int i=1; i<parameterArr.length; i++){
-            if(parameterArr[i-1] > parameterArr[i]) {
-                return false;
-            }
-        }
-        return true;
-    }
+    // public static boolean checkAssending(int parameterArr []) {
+    //     for(int i=1; i<parameterArr.length; i++){
+    //         if(parameterArr[i-1] > parameterArr[i]) {
+    //             return false;
+    //         }
+    //     }
+    //     return true;
+    // }
 
-    public static boolean checkDessending(int parameterArr[]) {
-        for(int i=parameterArr.length -2; i>=0; i--) {
-            if(parameterArr[i+1] < parameterArr[i]) {
-                return false;
-            }
-        }
-        return true;
-    }
+    // public static boolean checkDessending(int parameterArr[]) {
+    //     for(int i=parameterArr.length -2; i>=0; i--) {
+    //         if(parameterArr[i+1] < parameterArr[i]) {
+    //             return false;
+    //         }
+    //     }
+    //     return true;
+    // }
 
     public static int trappedWater(int parameterArr []) {
         if(parameterArr.length == 1 || parameterArr.length ==2) {
             return 0;
         }
 
-        if(checkAssending(parameterArr) || checkDessending(parameterArr) ) {
-            System.out.println("hi");
-            return 0;
-        }
+        // if(checkAssending(parameterArr) || checkDessending(parameterArr) ) {
+        //     System.out.println("hi");
+        //     return 0;
+        // }
         int leftMost [] = leftMost(parameterArr);
         int rightMost [] = rightMost(parameterArr);
 
