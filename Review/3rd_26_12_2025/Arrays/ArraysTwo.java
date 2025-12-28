@@ -63,10 +63,15 @@ public class ArraysTwo {
         int nums[] = { 4, 5, 6, 7, 0, 1, 2 };
         int target = 0;
 
-        int nums2[] = {2,3,4,5,0};
+        int nums2[] = {4,5,6,7,0,1,2};
+        int target2 = 3;
 
-        System.out.println(findTarget(nums2, target));
+        int nums3 [] = {1};
+        int target3 = 0;
+
         System.out.println(findTarget(nums, target));
+        System.out.println(findTarget(nums2, target2));
+        System.out.println(findTarget(nums3, target3));
 
     }
 }
