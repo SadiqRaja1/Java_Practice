@@ -77,5 +77,5 @@ public static int search (int nums [], int target) {
 
         System.out.println(findStart(nums));
         System.out.println(search(nums, target));
-    }
+}
 }
