@@ -47,20 +47,30 @@ public class sortingOne {
         System.out.println(Arrays.toString(parameterArr));
     }
 
-    // public static void contingsortReverse(int parameterArr []) {
-    //     int max = Integer.MIN_VALUE;
+    public static void contingsortReverse(int parameterArr []) {
+        int max = Integer.MIN_VALUE;
 
-    //     for(int i=0; i<parameterArr.length; i++) {
-    //         max = Math.max(max, parameterArr[i]);
-    //     }
-    //     int conntArr [] = new int[max+1];
+        for(int i=0; i<parameterArr.length; i++) {
+            max = Math.max(max, parameterArr[i]);
+        }
+        int countArr [] = new int[max+1];
 
-    //     for(int i=0; i<parameterArr.length; i++) {
-    //         conntArr[parameterArr[i]]++;
-    //     }
-    //     System.out.println(Arrays.toString(conntArr));
+        for(int i=0; i<parameterArr.length; i++) {
+            countArr[parameterArr[i]]++;
+        }
+        
+        int count = 0;
+        for(int i=countArr.length-1; i>=0; i--) {
 
-    // }
+            while(countArr[i] > 0) {
+                parameterArr[count] = i;
+                count++;
+                countArr[i]--;
+            }
+        }
+
+        System.out.println(Arrays.toString(parameterArr));
+    }
 
 
 
