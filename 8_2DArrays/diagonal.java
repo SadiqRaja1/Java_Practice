@@ -4,13 +4,13 @@ public class diagonal {
         int sum = 0;
         int n = parameterArr.length;
         for (int i = 0; i < parameterArr.length; i++) {
-            System.out.print(parameterArr[i][i] + " ");
+            // System.out.print(parameterArr[i][i] + " ");
             sum += parameterArr[i][i];
         }
 
         for (int i = 0; i < parameterArr.length; i++) {
             if (i != n - 1 - i) {
-                System.out.print(parameterArr[i][n - 1 - i] + " ");
+                // System.out.print(parameterArr[i][n - 1 - i] + " ");
                 sum += parameterArr[i][n-1-i];
             }
         }
