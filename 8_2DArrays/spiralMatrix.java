@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class spiralMatrix {
 
     public static void printSpiral(int parameterArr[][]) {
@@ -18,14 +16,19 @@ public class spiralMatrix {
             }
 
             // bot
-            for (int j = endCol - 1; j >= startCol; j--) {
-                System.out.print(parameterArr[endRow][j] + " ");
+            if (startRow < endRow) {
+                for (int j = endCol - 1; j >= startCol; j--) {
+                    System.out.print(parameterArr[endRow][j] + " ");
+                }
             }
 
             // left
-            for (int i = endRow - 1; i >= startRow + 1; i--) {
-                System.out.print(parameterArr[i][startCol] + " ");
+            if (startCol < endCol) {
+                for (int i = endRow - 1; i >= startRow + 1; i--) {
+                    System.out.print(parameterArr[i][startCol] + " ");
+                }
             }
+
             startRow++;
             startCol++;
             endRow--;
@@ -41,6 +44,12 @@ public class spiralMatrix {
                 { 13, 14, 15, 16 }
         };
 
+        int arr2[][] = {
+                { 1, 2, 3, 4 }
+        };
+
         printSpiral(arr);
+        System.out.println();
+        printSpiral(arr2);
     }
 }
