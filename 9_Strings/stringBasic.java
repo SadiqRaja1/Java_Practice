@@ -58,74 +58,115 @@ public class stringBasic {
          * 
          */
 
-        /* 4 String substring functions 
-        String fruits[] = { "apple", "mango", "banana" };
+        /*
+         * 4 String substring functions
+         * String fruits[] = { "apple", "mango", "banana" };
+         * 
+         * System.out.println(fruits[findLargest(fruits)]);
+         * 
+         */
 
-        System.out.println(fruits[findLargest(fruits)]);
+        /*
+         * 5 Compare to
+         * String s1 = "apple";
+         * String s2 = "apple";
+         * String s3 = "APPLE";
+         * 
+         * System.out.println(s1.compareTo(s2));
+         * System.out.println(s1.compareTo(s3));
+         * System.out.println(s1.compareToIgnoreCase(s3));
+         * 
+         * 
+         */
 
-        */
+        // StringBuilder ->
 
-        /*5 Compare to
-        String s1 = "apple";
-        String s2 = "apple";
-        String s3 = "APPLE";
+        // a
+        /*
+         * StringBuilder sb = new StringBuilder("Hello");
+         * sb.append(" World");
+         * System.out.println(sb);
+         * 
+         */
+        /*
+         * b
+         * sb.delete(0,sb.length());
+         * System.out.println(sb);
+         */
 
-        System.out.println(s1.compareTo(s2));
-        System.out.println(s1.compareTo(s3));
-        System.out.println(s1.compareToIgnoreCase(s3));
+        /*
+         * 6
+         * 
+         * int a = 2;
+         * Integer aI = 2;
+         * // System.out.println(a.toString()); //notwork
+         * 
+         * System.out.println(aI.toString()); // it will work
+         */
 
+    
+          // Question 4 make the first letter Capital
+          String name = "hello world";
+          String sentence = "hi i am sadiq";
+          String name2 = " hello  world ";
 
-        */
+          System.out.println(changeFirstCharCap(name2));
+         System.out.println(changeFirstCharCap(name));
+          System.out.println(changeFirstCharCap(sentence));
+          
+         
 
-        //StringBuilder ->
+        /* Question 5 */
+        // String str = "aaabbccdd";
+        // String str2 = "abc";
 
-        //a
-        /* 
-        StringBuilder sb = new StringBuilder("Hello");
-        sb.append(" World");
-        System.out.println(sb);
+        // System.out.println(compress(str));
+        // System.out.println(compress(str2));
+    }
 
-        */
-        /* b 
-        sb.delete(0,sb.length());
-        System.out.println(sb);
-        */
+    public static String compress(String str) {
+        StringBuilder helper = new StringBuilder();
 
+        helper.append(str.charAt(0));
+        int count = 1;
+        for (int i = 1; i < str.length(); i++) {
+            if (str.charAt(i) != str.charAt(i - 1)) {
+                if (count > 1) {
+                    helper.append(count);
+                    count = 1;
+                }
+                helper.append(str.charAt(i));
+            } else {
+                count++;
+            }
+        }
+        if (count > 1) {
+            helper.append(count);
+        }
 
-        /* 6 
-
-        int a = 2;
-        Integer aI = 2;
-        // System.out.println(a.toString()); //notwork
-
-        System.out.println(aI.toString()); // it will work
-        */
-
-        String name = "hello world";
-        String sentence = "hi i am sadiq";
-
-        System.out.println(changeFirstCharCap(name));
-        System.out.println(changeFirstCharCap(sentence));
-
+        return helper.toString();
     }
 
     public static String changeFirstCharCap(String name) {
+        if(name.length() == 0){
+            return "";
+        }
         StringBuilder sbName = new StringBuilder(name);
 
         sbName.setCharAt(0, Character.toUpperCase(sbName.charAt(0)));
 
-        for(int i=0; i<sbName.length(); i++){
-            if(sbName.charAt(i) == ' ') {
-                sbName.setCharAt(i+1, Character.toUpperCase(sbName.charAt(i+1)));
+        for (int i = 0; i < sbName.length(); i++) {
+            if (sbName.charAt(i) == ' ' && i+1 < sbName.length() && sbName.charAt(i+1) != ' ') {
+                sbName.setCharAt(i + 1, Character.toUpperCase(sbName.charAt(i + 1)));
             }
         }
-       return sbName.toString();
+        return sbName.toString();
     }
 
     public static int findLargest(String fruits[]) {
         int largestInx = 0;
         for (int i = 0; i < fruits.length; i++) {
-            largestInx = fruits[largestInx].length() > fruits[i].length()? largestInx : i;
+            largestInx = fruits[largestInx].length() > fruits[i].length() ? largestInx : i;
         }
         return largestInx;
     }
