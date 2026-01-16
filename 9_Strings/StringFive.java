@@ -9,6 +9,6 @@ public class StringFive {
 
         //String is Slow, immutable, threadsafe / StringBuffer is Slower, mutable, threadsafe synchronized / StringBuilder Fast, muatble, non- threadSafe
         StringBuffer c = new StringBuffer("Sadiq");
-        System.out.println(b);
+        System.out.println(c);
     }
 }
