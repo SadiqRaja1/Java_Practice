@@ -5,7 +5,7 @@ public class findPeakElement162 {
         findPeak(nums);
     }
 
-    public static void findPeak(int nums[]) {
+    public static int findPeak(int nums[]) {
         int start = 0;
         int end = nums.length-1;
 
@@ -13,13 +13,14 @@ public class findPeakElement162 {
             int mid = (start + end) /2;
 
             if(start == end) {
-                System.out.println(start);
-                return;
+                return start;
             }else if(nums[mid] < nums[mid+1]) {
                 start = mid+1;
             }else{
                 end = mid;
             }
         }
+        return start;
     }
+    
 }
