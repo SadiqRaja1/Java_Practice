@@ -9,6 +9,7 @@ public class conditionalOne {
 
         int a = sc.nextInt();
 
+        sc.close();
         if(checkNum(a)) {
             System.out.println("Number is negative");
         }else{
