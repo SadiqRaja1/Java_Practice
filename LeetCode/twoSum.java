@@ -22,7 +22,7 @@ public class twoSum {
         for(int i=0; i<arr.length; i++) {
             int help = target - arr[i];
 
-            if(hash.containsValue(help) && hash.get(help) != i) {
+            if(hash.containsKey(help) && hash.get(help) != i) {
                 return new int [] {i, hash.get(help)};
             }
         }
