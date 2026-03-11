@@ -3,12 +3,29 @@ import java.util.Arrays;
 public class rotateArray189 {
 
     public static void main(String[] args) {
-        int nums [] = {1,2};
+        int nums [] = {1,2,3,4,5,6,7};
 
         int nums1 [] = {-1,-100,3,99};
 
-        rotateArrayUsingSpace(nums, 7);
+        rotateArrayReverseMethod(nums, 3);
         System.out.println(Arrays.toString(nums));
+    }
+
+    public static void rotateArrayReverseMethod(int nums[], int k){
+        k = k % nums.length;
+        reverseMethod(nums, 0, nums.length-1);
+        reverseMethod(nums, 0, k-1);
+        reverseMethod(nums, k, nums.length-1);
+    }
+
+    public static void reverseMethod(int nums[],int start, int end){
+        while(start < end){
+            int temp = nums[start];
+            nums[start] = nums[end];
+            nums[end] = temp;
+            start++;
+            end--;
+        }
     }
 
     public static void rotateArrayUsingSpace(int nums[], int k) {
