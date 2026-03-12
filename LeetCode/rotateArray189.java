@@ -5,7 +5,7 @@ public class rotateArray189 {
     public static void main(String[] args) {
         int nums [] = {1,2,3,4,5,6,7};
 
-        int nums1 [] = {-1,-100,3,99};
+        // int nums1 [] = {-1,-100,3,99};
 
         rotateArrayReverseMethod(nums, 3);
         System.out.println(Arrays.toString(nums));
