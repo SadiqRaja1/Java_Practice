@@ -25,5 +25,8 @@ public class binarySearch {
         int nums [] = {-1,0,2,4,6,8};
         int target = 4;
         System.out.print(obj.search(nums, target));
+
+         int checkNum [] = {3,4,5,6};
+         System.out.println(obj.search(checkNum, 0));
     }
 }
