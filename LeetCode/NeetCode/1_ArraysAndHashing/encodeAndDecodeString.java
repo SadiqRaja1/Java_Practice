@@ -1,0 +1,79 @@
+import java.util.ArrayList;
+import java.util.List;
+
+class Solution {
+
+    public String encode(List<String> strs) {
+        if(strs.isEmpty()){
+            return "";
+        }
+
+        StringBuilder res = new StringBuilder();
+        List<Integer> sizes = new ArrayList<>();
+
+        for ( String st : strs) {
+            sizes.add(st.length());
+        }
+
+        for (int size : sizes) {
+            res.append(size).append(",");
+        }
+
+        res.append("#");
+
+        for (String st : strs) {
+            res.append(st);
+        }
+
+        return res.toString();
+
+    }
+
+    public List<String> decode(String str) {
+        if(str.length() == 0) {
+            return new ArrayList<>();
+        }
+
+        List<String> res = new ArrayList<>();
+        List<Integer> sizes = new ArrayList<>();
+
+        int i = 0;
+
+        while(str.charAt(i) != '#') {
+            StringBuilder curr = new StringBuilder();
+            while (str.charAt(i) != ','){
+                curr.append(str.charAt(i));
+                i++;
+            }
+            sizes.add(Integer.parseInt(curr.toString()));
+
+            i++;
+        }
+        i++;
+        
+        for(int sz : sizes){
+            res.add(str.substring(i,i+sz));
+            i += sz;
+        }
+
+        return res;
+
+    }
+
+}
+
+public class encodeAndDecodeString {
+    public static void main (String args []) {
+        List<String> dummy_input = new ArrayList<>();
+        dummy_input.add("Hello");
+        dummy_input.add("World");
+
+        Solution obj = new Solution();
+
+        String encode = obj.encode(dummy_input);
+        System.out.println(encode);
+
+        System.out.println(obj.decode(encode));
+
+    }
+}
