@@ -36,6 +36,20 @@ class Solution {
             }
         }
 
+        for(int start = 0; start<9; start++) {
+            HashSet<Character> set = new HashSet<>();
+            for (int i=0; i<3; i++){
+                for(int j=0; j<3; j++){
+                    int row = (start / 3)*3+i;
+                    int col = (start % 3)*3+j;
+
+                    if(board[row][col] == '.') continue;
+                    if(set.contains(board[row][col])) return false;
+                    set.add(board[row][col]);
+                }
+            }
+        }
+
         return true;
     }
 }
