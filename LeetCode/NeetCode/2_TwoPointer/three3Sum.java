@@ -2,7 +2,6 @@ import java.util.*;
 class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> ans = new ArrayList<>();
-        HashMap<Integer,List<Integer>> map = new HashMap<>();
         int n= nums.length;
         
         Arrays.sort(nums);
@@ -24,7 +23,7 @@ class Solution {
                     ans.add(Arrays.asList(nums[i],nums[l],nums[r]));
                     l++;
                     r--;
-                    while(l < r && nums[l] == nums[l-i]) {
+                    while(l < r && nums[l] == nums[l-1]) {
                         l++;
                     }
                 }
