@@ -21,8 +21,6 @@ class Solution {
             right *= nums[i];
         }
 
-        System.out.println(Arrays.toString(ans));
-
         return ans;
     }
 }  
