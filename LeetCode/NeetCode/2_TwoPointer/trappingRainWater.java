@@ -2,6 +2,11 @@ import java.util.Arrays;
 
 class Solution {
     public int trap(int[] height) {
+
+        if (height.length == 0) {
+            return 0;
+        }
+        
         int n = height.length;
 
         int left [] = new int[n];
