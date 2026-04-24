@@ -21,7 +21,8 @@ class Solution {
 public class longestSubstringWithoutRepeatingCharacters {
     public static void main (String args [] ) {
         // String st = "zxyzxyz";
-        String st = " ";
+        // String st = " ";
+        String st = "pwwkew";
 
         Solution obj = new Solution();
 
