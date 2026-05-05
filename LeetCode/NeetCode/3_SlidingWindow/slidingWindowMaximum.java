@@ -32,7 +32,7 @@ class Solution {
                 dq.pollFirst();
             }
 
-            while (!dq.isEmpty() && nums[dq.peekFirst()] < nums[r]){
+            while (!dq.isEmpty() && nums[dq.peekLast()] < nums[r]){
                 dq.pollLast();
             }
 
